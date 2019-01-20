@@ -6,13 +6,13 @@
 
         <section>
             <a href="https://www.facebook.com/Florbal.Letohrad/" >
-                <img src="../obrazky/facebook_logo.png" alt="Smiley face" class="facebook-logo">
+                <img src="./obrazky/facebook_logo.png" alt="Smiley face" class="facebook-logo">
             </a>
             <a href="https://www.instagram.com/fbcletohrad/">
-                <img src="../obrazky/instagram_logo.png" alt="Smiley face" class="facebook-logo">
+                <img src="./obrazky/instagram_logo.png" alt="Smiley face" class="facebook-logo">
             </a>
             <a href="http://florbal-letohrad.cz/">
-                <img src="../logo.png" alt="Smiley face" class="facebook-logo">
+                <img src="logo.png" alt="Smiley face" class="facebook-logo">
             </a>
         </section>
 
