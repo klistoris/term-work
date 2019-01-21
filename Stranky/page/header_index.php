@@ -5,7 +5,8 @@
     <a href="./page/historie.php">Historie</a>
     <a href="./page/tymy.php">Týmy</a>
     <a href="./page/partneri.php">Partneři</a>
-    <a href="./page/prihlaska.php">Přihláška</a>
+    <a href="./page/prihlaska.php">Registrace</a>
     <a href="./page/rezervace.php">Rezervace</a>
     <a href="./page/kontakty.php">Kontakt</a>
+    <a href="./page/prihlaseni.php">Přihlášení</a>
 </nav>
