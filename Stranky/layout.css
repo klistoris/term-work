@@ -127,6 +127,9 @@ header nav a:hover{
     height: 30px;
     align: center;
 }
+.nadpis{
+    text-align: center;
+}
 
 footer{
     left: 0;
