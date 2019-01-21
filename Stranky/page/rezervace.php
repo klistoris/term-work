@@ -12,8 +12,10 @@
     include 'header.php'
     ?>
 </header>
-<section id="hero">
-    <h2>Rezervace</h2>
+<section id="cover_photo">
+    <div>
+        <h1>Rezervace</h1>
+    </div>
 </section>
 <main>
 

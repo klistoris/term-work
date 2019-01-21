@@ -15,6 +15,11 @@
     include './page/header_index.php'
     ?>
 </header>
+<section id="cover_photo">
+    <div>
+        <h1>Úvod</h1>
+    </div>
+</section>
 <main>
 
     <div>

@@ -12,9 +12,14 @@
     include 'header.php'
     ?>
 </header>
+<section id="cover_photo">
+    <div>
+        <h1>Týmy</h1>
+    </div>
+</section>
 <main>
     <div>
-        <h1 class="nadpis">Přehled týmů</h1>
+        <h1 class="nadpis">Přehled týmů pro sezónu 2018/2019</h1>
         <p>
             Etiam bibendum elit eget erat. Nullam faucibus mi quis velit. Nullam lectus justo, vulputate eget mollis sed,
             tempor sed magna. Etiam dui sem, fermentum vitae, sagittis id, malesuada in, quam. Aliquam erat volutpat.

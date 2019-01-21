@@ -5,7 +5,7 @@ body, html {
 }
 
 body{
-    margin-top: 80px;
+    margin-top: 50px;
     margin-bottom: 20px;
     font-family: "Roboto", sans-serif;
     font-size: 16px;
@@ -48,22 +48,23 @@ header nav a:hover{
     margin-top: 5px;
 }
 
-#hero{
+#cover_photo{
     height: 100%;
+    background: url("./obrazky/uvodni_fotka.jpeg") no-repeat center;
     background-size: cover;
     position: relative;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: rgb(0, 16, 83);
 }
 
-#hero h1{
+#cover_photo h1{
     font-size: 5em;
 }
 
-#hero a{
+#cover_photo a{
     padding: 30px 40px;
     background-color: white;
     border-radius: 5px;
@@ -72,7 +73,7 @@ header nav a:hover{
     transition: 1s;
 }
 
-#hero a:hover{
+#cover_photo a:hover{
     background-color: black;
     color: white;
     border: 1px solid white;
@@ -110,24 +111,19 @@ header nav a:hover{
     justify-content: normal;
 }
 
-.facebook-logo{
+.odkazy-na-socialni-site{
     align-items: center;
     justify-items: center;
-    margin-top: 13px;
+    margin-top: 15px;
     width: 20px;
     height: 20px;
     align: center;
 }
-
-.instagram-logo{
-    align-items: center;
-    justify-items: center;
-    margin-top: 8px;
-    width: 30px;
-    height: 30px;
-    align: center;
-}
 .nadpis{
+    text-align: center;
+}
+
+.formular{
     text-align: center;
 }
 
@@ -137,7 +133,7 @@ footer{
     width: 100%;
     background-color: rgb(0, 16, 83);
     color: #f2f2f2;
-    height: 45px;
+    height: 50px;
 }
 
 footer a{

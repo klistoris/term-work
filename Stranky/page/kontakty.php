@@ -12,9 +12,14 @@
     include 'header.php'
     ?>
 </header>
+<section id="cover_photo">
+    <div>
+        <h1>Kontakty</h1>
+    </div>
+</section>
 <main>
     <div>
-        <h1 class="nadpis">Kontakt</h1>
+        <h1 class="nadpis">Kontakty na vedení klubu</h1>
         <p>
             Cras elementum. Nullam faucibus mi quis velit. Nullam dapibus fermentum ipsum. Mauris tincidunt sem sed arcu.
             Integer tempor. Aliquam erat volutpat. Mauris dictum facilisis augue. Mauris elementum mauris vitae tortor.

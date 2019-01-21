@@ -12,6 +12,11 @@
     include 'header.php'
     ?>
 </header>
+<section id="cover_photo">
+    <div>
+        <h1>Historie</h1>
+    </div>
+</section>
 <main>
     <div>
         <h1 class="nadpis">Historie klubu</h1>
