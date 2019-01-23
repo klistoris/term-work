@@ -1,6 +1,6 @@
 <section id="cover_photo">
     <div>
-        <h1>PřihlášeníFagots</h1>
+        <h1>Přihlášení</h1>
     </div>
 </section>
 <main>

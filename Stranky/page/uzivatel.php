@@ -5,30 +5,33 @@
     </div>
 </section>
 <main>
+    <div align="center">
     <?php
     if ($_GET["action"] == "sprava-uzivatelu") {
-        echo "<h2>Správa uživatelů</h2>";
+        echo "<h2 class='nadpis'>Správa uživatelů</h2>";
         $userDao = new UserRepository(Connection::getPdoInstance());
         $allUsersResult = $userDao->getAllUsers();
 
         $datatable = new DataTable($allUsersResult);
         $datatable->addColumn("idUzivatel", "ID");
         $datatable->addColumn("email", "Email");
-        $datatable->addColumn("jmeno", "Jmeno");
+        $datatable->addColumn("jmeno", "Jméno");
+        $datatable->addColumn("heslo", "Heslo");
         $datatable->render();
 
 
     } else if ($_GET["action"] == "podle-emailu") {
-        echo "<h2>Vyhledávání podle emailů</h2>";
+        echo "<h2 class='nadpis'>Vyhledávání podle emailů</h2>";
 
         ?>
 
-        <form method="post">
-            <input type="text" name="mail" placeholder="insert email address" >
-            <input type="submit" value="Find by email">
+        <form method="post" class="nadpis">
+            <input type="text" name="mail" placeholder="vložte emailovou adresu" >
+            <input type="submit" value="Hledat">
         </form>
+        <br>
 
-        <?php
+        <?php 
 
         if (!empty($_POST["mail"])) {
             $conn = Connection::getPdoInstance();
@@ -37,12 +40,14 @@
             $datatable = new DataTable($usersByEmail);
             $datatable->addColumn("idUzivatel", "ID");
             $datatable->addColumn("email", "Email");
-            $datatable->addColumn("jmeno", "Jmeno");
+            $datatable->addColumn("jmeno", "Jméno");
+            $datatable->addColumn("heslo", "Heslo");
             $datatable->render();
         }
 
     }
     ?>
+        </div>
     <br>
 
 

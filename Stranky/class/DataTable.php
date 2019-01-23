@@ -1,3 +1,21 @@
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th{
+        background-color: rgb(0, 16, 83);
+        color: white;
+        height: 2em;
+    }
+    td{
+        background-color: white;
+        width: 10em;
+        height: 1.25em;
+        text-align: center;
+    }
+</style>
+
 <?php
 
 class DataTable
@@ -39,6 +57,8 @@ class DataTable
         }
         echo "</tbody>";
         echo "</table>";
-        echo "Total rows: " . sizeof($this->dataSet);
+        echo "<br>";
+        echo "Počet záznamů: " . sizeof($this->dataSet);
+        echo "<br>";
     }
 }

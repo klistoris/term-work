@@ -30,11 +30,14 @@ function __autoload($className)
 </header>
 
 <?php
-    $file = "./page/" . $_GET["page"] . ".php";
-    if (file_exists($file)) {
-        include $file;
-    } else {
-        echo "<h1>Tohle je úvodní stránka</h1>";
+    if (isset($_GET['page']))
+    {
+        $file = "./page/" . $_GET["page"] . ".php";
+        if (file_exists($file)) {
+            include $file;
+        }
+    }else {
+        include "./page/uvod.php";
     }
 ?>
 
