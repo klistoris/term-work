@@ -4,7 +4,6 @@
     </div>
 </section>
 <main>
-
     <div>
         <h1 class="nadpis">Aktuální sezóna 2018/2019</h1>
         <p>

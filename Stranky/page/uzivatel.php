@@ -1,4 +1,3 @@
-
 <section id="cover_photo">
     <div>
         <h1>Uživatelé</h1>
@@ -17,8 +16,12 @@
         $datatable->addColumn("email", "Email");
         $datatable->addColumn("jmeno", "Jméno");
         $datatable->addColumn("heslo", "Heslo");
-        $datatable->render();
-
+        $datatable->addColumn("ahoj", "Editace");
+        $datatable->render_uzivatel();
+        ?>
+        <br>
+        <a class="tabulka_tlacitko" href="<?= BASE_URL . "?page=pridej_uzivatele" ?>">Přidat uživatele</a>
+        <?php
 
     } else if ($_GET["action"] == "podle-emailu") {
         echo "<h2 class='nadpis'>Vyhledávání podle emailů</h2>";
@@ -31,7 +34,7 @@
         </form>
         <br>
 
-        <?php 
+        <?php
 
         if (!empty($_POST["mail"])) {
             $conn = Connection::getPdoInstance();
@@ -42,9 +45,9 @@
             $datatable->addColumn("email", "Email");
             $datatable->addColumn("jmeno", "Jméno");
             $datatable->addColumn("heslo", "Heslo");
-            $datatable->render();
-        }
+            $datatable->render_uzivatel();
 
+        }
     }
     ?>
         </div>

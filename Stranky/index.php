@@ -41,6 +41,8 @@ function __autoload($className)
     }
 ?>
 
+
+
 <footer>
     <?php
     include './page/footer.php';

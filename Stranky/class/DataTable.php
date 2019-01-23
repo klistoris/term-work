@@ -61,4 +61,39 @@ class DataTable
         echo "Počet záznamů: " . sizeof($this->dataSet);
         echo "<br>";
     }
+
+    public function render_uzivatel()
+    {
+        echo "<table>";
+        echo "<thead>";
+        echo "<tr>";
+        foreach ($this->columns as $key => $value) {
+            echo "<th>" . $value["table-head-title"] . "</th>";
+        }
+        echo "</tr>";
+        echo "</thead>";
+        echo "<tbody>";
+        foreach ($this->dataSet as $row) {
+            echo "<tr>";
+            foreach ($this->columns as $key => $value) {
+                if (isset($row[$key]))
+                {
+                    echo "<td>" . $row[$key] . "</td>";
+                }else {
+                   ?>  <td style='width: 15em'>
+                    <ul>
+                        <li style="display: inline"><a class="tabulka_tlacitko" href="<?= BASE_URL . "?page=uprav_uzivatele" ?>">Uprav</a></li>
+                        <li style="display: inline"><a class="tabulka_tlacitko" href="<?= BASE_URL . "?page=odeber_uzivatele" ?>">Odeber</a></li>
+                    </ul></td><?php
+                }
+
+            }
+            echo "</tr>";
+        }
+        echo "</tbody>";
+        echo "</table>";
+        echo "<br>";
+        echo "Počet záznamů: " . sizeof($this->dataSet);
+        echo "<br>";
+    }
 }

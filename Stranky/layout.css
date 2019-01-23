@@ -127,6 +127,24 @@ header nav a:hover{
     text-align: center;
 }
 
+.tabulka_tlacitko{
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.tabulka_tlacitko:hover{
+    background-color: deepskyblue;
+    color: white;
+}
+
+ul{
+    list-style-type: decimal;
+}
 footer{
     left: 0;
     bottom: 0;
