@@ -1,11 +1,19 @@
-<div id="header-web-title"><img id="header-logo" src="../logo.png" alt="Smiley face"></div>
+<div id="header-web-title"><img id="header-logo" src="./obrazky/logo.png" alt="Smiley face"></div>
+
 <nav>
-    <a href="../index.php">Úvod</a>
-    <a href="historie.php">Historie</a>
-    <a href="tymy.php">Týmy</a>
-    <a href="partneri.php">Partneři</a>
-    <a href="registrace.php">Registrace</a>
-    <a href="rezervace.php">Rezervace</a>
-    <a href="kontakty.php">Kontakt</a>
-    <a href="prihlaseni.php">Přihlášení</a>
+    <a href="<?= BASE_URL . "?page=uvod" ?>">Úvod</a>
+    <a href="<?= BASE_URL . "?page=historie" ?>">Historie</a>
+    <a href="<?= BASE_URL . "?page=tymy" ?>">Týmy</a>
+    <a href="<?= BASE_URL . "?page=partneri" ?>">Partneři</a>
+    <a href="<?= BASE_URL . "?page=registrace" ?>">Registrace</a>
+    <a href="<?= BASE_URL . "?page=rezervace" ?>">Rezervace</a>
+    <a href="<?= BASE_URL . "?page=kontakty"?>">Kontakt</a>
+    <?php if (Authentication::getInstance()->hasIdentity()) : ?>
+        <a href="<?= BASE_URL . "?page=uzivatel&action=sprava-uzivatelu" ?>">Správa uživatelů</a>
+        <a href="<?= BASE_URL . "?page=uzivatel&action=podle-emailu" ?>">Vyhledávání uživatelů</a>
+        <a href="<?= BASE_URL . "?page=logout" ?>">Odhlášení</a>
+    <?php else : ?>
+        <a href="<?= BASE_URL . "?page=prihlaseni" ?>">Přihlášení</a>
+    <?php endif; ?>
+
 </nav>

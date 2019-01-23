@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../layout.css">
-    <title>FBC Letohrad</title>
-</head>
-<body>
-<header>
-    <?php
-    include 'header.php'
-    ?>
-</header>
 <section id="cover_photo">
     <div>
         <h1>Partneři</h1>
@@ -92,10 +78,3 @@
         </div>
     </div>
 </main>
-<footer>
-    <?php
-    include 'footer.php'
-    ?>
-</footer>
-</body>
-</html>

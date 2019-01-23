@@ -1,6 +1,6 @@
 <?php
 
-class UserRepositary
+class UserRepository
 {
     private $conn = null;
 
@@ -14,13 +14,13 @@ class UserRepositary
     }
 
     public function getAllUsers() {
-        $stmt = $this->conn->prepare("SELECT * FROM users");
+        $stmt = $this->conn->prepare("SELECT * FROM uzivatel");
         $stmt->execute();
         return $stmt->fetchAll();
     }
 
     public function getByEmail(string $mail) {
-        $stmt = $this->conn->prepare("SELECT * FROM users WHERE email LIKE  concat('%', :email, '%') ");
+        $stmt = $this->conn->prepare("SELECT * FROM uzivatel WHERE email LIKE  concat('%', :email, '%') ");
         $stmt->bindParam(":email", $mail);
         $stmt->execute();
         return $stmt->fetchAll();
