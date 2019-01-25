@@ -1,7 +1,7 @@
 <?php
 
 
-class Authentication
+class Autentizace
 {
     static private $instance = NULL;
     static private $identity = NULL;
@@ -9,10 +9,10 @@ class Authentication
     private $conn = null;
 
 
-    static function getInstance() : Authentication
+    static function getInstance() : Autentizace
     {
         if (self::$instance == NULL) {
-            self::$instance = new Authentication();
+            self::$instance = new Autentizace();
         }
         return self::$instance;
     }
@@ -22,20 +22,20 @@ class Authentication
         if (isset($_SESSION['identity'])) {
             self::$identity = $_SESSION['identity'];
         }
-        $this->conn = Connection::getPdoInstance();
+        $this->conn = Pripojeni::getPdoInstance();
 
     }
 
     public function login(string $email, string $password) : bool
     {
-        $stmt = $this->conn->prepare("SELECT idUzivatel, jmeno, email, heslo FROM uzivatel WHERE email= :email and heslo = :heslo");
+        $stmt = $this->conn->prepare("SELECT idOsoba, jmeno, email, heslo FROM osoba WHERE email= :email and heslo = :heslo");
         $stmt->bindParam(':email', $_POST["loginMail"]);
         $stmt->bindParam(':heslo', $_POST["loginPassword"]);
         $stmt->execute();
         $user = $stmt->fetch();
 
         if ($user) {
-            $userDto = array('idUzivatel' => $user['id'], 'jmeno' => $user['username'], 'email' => $user['email'],
+            $userDto = array('idOsoba' => $user['id'], 'jmeno' => $user['username'], 'email' => $user['email'],
                 'heslo' => $user['heslo']);
             $_SESSION['identity'] = $userDto;
             self::$identity = $userDto;

@@ -1,6 +1,6 @@
 <?php
 
-class Connection {
+class Pripojeni {
 
     static private $instance = NULL;
 

@@ -6,5 +6,5 @@
  * Time: 20:56
  */
 
-Authentication::getInstance()->logout();
+Autentizace::getInstance()->logout();
 header("Location:" . BASE_URL);

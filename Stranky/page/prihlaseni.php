@@ -9,7 +9,7 @@
     <?php
 
     if (!empty($_POST) && !empty($_POST["loginMail"]) && !empty($_POST["loginPassword"])) {
-        $authService = Authentication::getInstance();
+        $authService = Autentizace::getInstance();
         if ($authService->login($_POST["loginMail"], $_POST["loginPassword"])) {
             header("Location:" . BASE_URL);
         } else {
