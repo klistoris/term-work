@@ -4,9 +4,9 @@
             <p>Stránku spravuje Administrátor</p>
         </section>
 
-        <section>
+        <div>
             <a href="https://www.facebook.com/Florbal.Letohrad/" >
-                <img src="../obrazky/facebook_logo.png" alt="Smiley face" class="odkazy-na-socialni-site">
+                <img src="./obrazky/facebook_logo.png" alt="Smiley face" class="odkazy-na-socialni-site">
             </a>
             <a href="https://www.instagram.com/fbcletohrad/">
                 <img src="./obrazky/instagram_logo.png" alt="Smiley face" class="odkazy-na-socialni-site">
@@ -14,7 +14,7 @@
             <a href="http://florbal-letohrad.cz/">
                 <img src="./obrazky/logo.png" alt="Smiley face" class="odkazy-na-socialni-site">
             </a>
-        </section>
+        </div>
 
         <section>
             <p>

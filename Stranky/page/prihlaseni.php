@@ -5,7 +5,6 @@
 </section>
 <main>
     <h1>Přihlášení do systému</h1>
-    <hr>
     <?php
 
     if (!empty($_POST) && !empty($_POST["loginMail"]) && !empty($_POST["loginPassword"])) {
@@ -21,21 +20,14 @@
 
     ?>
 
-    <br>
-
+    <div class="form_registrace">
     <form method="post">
-        <label style="padding-right: 10px">Přihlašovací jméno:</label>
-
-        <input type="email" name="loginMail" placeholder="Vložte email">
-        <br>
-        
-        <label style="padding-right: 104px">Heslo:</label>
+        <label for="login">Přihlašovací jméno:</label>
+        <input type="email" name="loginMail" fname="login" placeholder="Vložte email">
+        <label>Heslo:</label>
         <input type="password" name="loginPassword" placeholder="Vložte heslo">
-        <br><br>
         <input type="submit" value="Přihlásit">
 
     </form>
-
-    <br><br>
-
+    </div>
 </main>

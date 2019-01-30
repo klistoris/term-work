@@ -11,7 +11,7 @@
 
             if ($_GET["action"] == "udalost") {
                 $conn = Pripojeni::getPdoInstance();
-                $userDao = new UdalostAdresar($conn);
+                $userDao = new Udalost($conn);
                 $udalost = $userDao->getByUdalost();
                 $datatable = new VypisTabulek($udalost);
                 $datatable->addColumn("nazev_udalosti", "Název");

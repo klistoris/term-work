@@ -4,22 +4,17 @@
     </div>
 </section>
 <main>
-<div class="formular">
     <h1>Formulář k žádosti o členství</h1>
-    <hr>
-    <div>
-        <form action="./page/prihlaska.php" >
-            <label style="padding-right: 22px">Jméno:</label>
-            <input name="firstname" type="text" placeholder="Vložte jméno">
-            <br>
-            <label style="padding-right: 10px;">Příjmení:</label>
+    <div class="form_registrace">
+        <form>
+            <label for="firstname">Jméno</label>
+            <input name="firstname" id="firstname" type="text" placeholder="Vložte jméno">
+            <label >Příjmení:</label>
             <input name="lastname" type="text" placeholder="Vložte příjmení">
-            <br>
-            <label style="padding-right: 30px">Email:</label>
+            <label >Email:</label>
             <input name="mail" type="text" placeholder="Vložte email">
-            <br>
-            <label style="padding-right: 21px">Ročník:</label>
-            <select name="rocnik" style="padding-left: 85px">
+            <label>Ročník:</label>
+            <select name="rocnik">
                 <option value="1980">1980</option>
                 <option value="1981">1981</option>
                 <option value="1982">1982</option>
@@ -52,33 +47,28 @@
                 <option value="2009">2009</option>
                 <option value="2010">2010</option>
             </select>
-            <br>
-            <label  style="padding-right: 2px">Kategorie:</label>
-            <select name="kategorie" style="padding-right: 55px">
+            <label>Kategorie:</label>
+            <select name="kategorie">
                 <option value="mladsi">Mladší žáci</option>
                 <option value="starsi">Starší žáci</option>
                 <option value="dorost">Dorostenci</option>
                 <option value="muzi">Muži</option>
             </select>
-            <br>
             <label>Držení hole:</label>
-            <select name="drzeni_hole" style="padding-right: 65px">
+            <select name="drzeni_hole">
                 <option value="vpravo">Vpravo</option>
                 <option value="vlevo">Vlevo</option>
             </select>
-            <br>
-            <label style="padding-right: 25px">Pozice:</label>
-            <select name="pozice" style="padding-right: 65px">
+            <label>Pozice:</label>
+            <select name="pozice">
                 <option value="brankar">Brankář</option>
                 <option value="obrance">Obránce</option>
                 <option value="centr">Centr</option>
                 <option value="utocnik">Útočník</option>
             </select>
-            <br><hr><br>
             <input type="submit" value="Odeslat přihlášku">
         </form>
         <br>
     </div>
-</div>
 
 </main>

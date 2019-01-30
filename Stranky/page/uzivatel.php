@@ -8,7 +8,7 @@
     <?php
     if ($_GET["action"] == "sprava-uzivatelu") {
         echo "<h2 class='nadpis'>Správa uživatelů</h2>";
-        $userDao = new UzivatelAdresar(Pripojeni::getPdoInstance());
+        $userDao = new Uzivatel(Pripojeni::getPdoInstance());
         $allUsersResult = $userDao->getAllUsers();
 
         $datatable = new VypisTabulek($allUsersResult);
@@ -18,10 +18,35 @@
         $datatable->addColumn("prijmeni", "Příjmení");
         $datatable->addColumn("vek", "Věk");
         $datatable->addColumn("heslo", "Heslo");
+        $datatable->addColumn("vek", "Věk");
+        $datatable->addColumn("telefon", "Telefon");
+        $datatable->addColumn("role", "Role");
         $datatable->addColumn("editace", "Editace");
         $datatable->render_uzivatel();
 
-    } else if ($_GET["action"] == "podle-emailu") {
+        if ($_GET["action"] == "uprava") {
+            $id = $_GET["id"];
+            $userDao = new Uzivatel(Pripojeni::getPdoInstance());
+            $uzivatel = $userDao->getOneUser($id);
+            $jmeno = $uzivatel[0]["jmeno"];
+            $prijmeni = $uzivatel[0]["prijmeni"];
+            $email = $uzivatel[0]["email"];
+            $vek = $uzivatel[0]["vek"];
+            $telefon = $uzivatel[0]["telefon"];
+            $heslo = $uzivatel[0]["heslo"];
+            $role = $uzivatel[0]["role"];
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (empty($errors)) {
+                $pom = new Uzivatel(Pripojeni::getPdoInstance());
+                $pom->upravUzivatele($id, $_POST["jmeno"], $_POST["prijmeni"], $_POST["email"], $_POST["vek"],
+                    $_POST["telefon"], $_POST["heslo"], $_POST["role"]);
+            }
+        }
+    }
+
+    else if ($_GET["action"] == "podle-emailu") {
         echo "<h2 class='nadpis'>Vyhledávání podle emailů</h2>";
 
         ?>
@@ -36,7 +61,7 @@
 
         if (!empty($_POST["mail"])) {
             $conn = Pripojeni::getPdoInstance();
-            $userDao = new UzivatelAdresar($conn);
+            $userDao = new Uzivatel($conn);
             $usersByEmail = $userDao->getByEmail($_POST["mail"]);
             $datatable = new VypisTabulek($usersByEmail);
             $datatable->addColumn("idOsoba", "ID");
@@ -45,15 +70,14 @@
             $datatable->addColumn("prijmeni", "Příjmení");
             $datatable->addColumn("vek", "Věk");
             $datatable->addColumn("heslo", "Heslo");
-            $datatable->render_uzivatel();
+            $datatable->render_uzivatel_email();
 
         }
-    } else if ($_GET["action"] == "podle-emailu") {
+    } else if ($_GET["action"] == "udalost") {
         echo "<h2 class='nadpis'>Události</h2>";
 
-        if ($_GET["action"] == "udalost") {
-            $conn = Pripojeni::getPdoInstance();
-            $userDao = new UzivatelAdresar($conn);
+        $conn = Pripojeni::getPdoInstance();
+            $userDao = new Uzivatel($conn);
             $udalost = $userDao->getByUdalost();
             $datatable = new VypisTabulek($udalost);
             $datatable->addColumn("id_udalost", "ID");
@@ -63,7 +87,7 @@
             $datatable->addColumn("popis_udalosti", "Popis");
             $datatable->render_udalost();
 
-        }
+
     }
     ?>
         </div>

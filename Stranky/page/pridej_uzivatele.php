@@ -4,31 +4,41 @@
     </div>
 </section>
 <main>
-    <div align="center">
-        <h2 class="nadpis">Přidání uživatele</h2>
-        <form action="./page/prihlaska.php" >
-            <label style="padding-right: 22px">Jméno:</label>
-            <input name="firstname" type="text" placeholder="Vložte jméno">
-            <br>
-            <label style="padding-right: 10px;">Heslo:</label>
-            <input name="lastname" type="text" placeholder="Vložte příjmení">
-            <br>
-            <label style="padding-right: 30px">Email:</label>
-            <input name="mail" type="text" placeholder="Vložte email">
-            <br>
-            <label style="padding-right: 21px">Role:</label>
-            <select name="rocnik" style="padding-left: 85px">
-                <option value="admin">Admin</option>
-                <option value="registrovany">Registrovaný</option>
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if (empty($errors)) {
+
+            $pom = new Uzivatel(Pripojeni::getPdoInstance());
+            $pom->vlozUzivatele($_POST["jmeno"], $_POST["prijmeni"], $_POST["vek"], $_POST["telefon"],
+                $_POST["email"], $_POST["heslo"], $_POST["role"]);
+        }
+    }
+
+    ?>
+
+    <div class="form_registrace">
+        <h2 class="nadpis">Přidat uživatele</h2>
+        <form method="post" >
+            <label>Jméno:</label>
+            <input name="jmeno" type="text" placeholder="Vložte jméno"/>
+            <label>Přijmení:</label>
+            <input name="prijmeni" type="text" placeholder="Vložte příjmení"/>
+            <label>Email:</label>
+            <input name="email" type="text" placeholder="Vložte email"/>
+            <label>Věk:</label>
+            <input name="vek" type="text" placeholder="Vložte věk"/>
+            <label>Telefon:</label>
+            <input name="telefon" type="text" placeholder="Vložte telefon"/>
+            <label>Heslo:</label>
+            <input name="heslo" type="text" placeholder="Vložte heslo"/>
+            <label>Role:</label>
+            <select name="role">
+                <option name= "admin" value="administrator">Admin</option>
+                <option name= "registrovany" value="registrovany">Registrovaný</option>
             </select>
-            <br>
-            <br>
             <input type="submit" value="Přidat uživatele">
         </form>
     </div>
     <br>
-
-
-
 </main>
 
