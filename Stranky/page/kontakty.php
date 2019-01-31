@@ -6,24 +6,33 @@
 <main>
     <div>
         <h1 class="nadpis">Kontakty na vedení klubu</h1>
+        <hr>
+        <h3>Vedoucí klubu:</h3>
+        <h4>Petr Adamec</h4>
         <p>
-            Cras elementum. Nullam faucibus mi quis velit. Nullam dapibus fermentum ipsum. Mauris tincidunt sem sed arcu.
-            Integer tempor. Aliquam erat volutpat. Mauris dictum facilisis augue. Mauris elementum mauris vitae tortor.
-            Integer lacinia. In enim a arcu imperdiet malesuada. Temporibus autem quibusdam et aut officiis debitis aut
-            rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Etiam sapien
-            elit, consequat eget, tristique non, venenatis quis, ante. Phasellus enim erat, vestibulum vel, aliquam a, posuere
-            eu, velit. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-            magni dolores eos qui ratione voluptatem sequi nesciunt.
+        Telefon: +420000000000<br>
+            Email: adamec@admin.cz
         </p>
         <hr>
+        <h3>Sekretář:</h3>
+        <h4>Jan Skalický</h4>
         <p>
-            Vivamus ac leo pretium faucibus. Nullam dapibus fermentum ipsum. Integer imperdiet lectus quis justo. Proin
-            in tellus sit amet nibh dignissim sagittis. Fusce consectetuer risus a nunc. Duis bibendum, lectus ut viverra
-            rhoncus, dolor nunc faucibus libero, eget facilisis enim ipsum id lacus. Nullam eget nisl. Et harum quidem
-            rerum facilis est et expedita distinctio. Nulla turpis magna, cursus sit amet, suscipit a, interdum id, felis.
-            Nulla est. Curabitur bibendum justo non orci. Maecenas aliquet accumsan leo. In sem justo, commodo ut, suscipit
-            at, pharetra vitae, orci. Duis bibendum, lectus ut viverra rhoncus, dolor nunc faucibus libero, eget facilisis
-            enim ipsum id lacus. Etiam dictum tincidunt diam. Aliquam ornare wisi eu metus.
+            Telefon: +420000000000<br>
+            Email: skalicky@admin.cz
+        </p>
+        <hr>
+        <h3>Vedoucí mládeže:</h3>
+        <h4>Jiří Doběhal</h4>
+        <p>
+            Telefon: +420000000000<br>
+            Email: dobehal@admin.cz
+        </p>
+        <hr>
+        <h3>Ekonom:</h3>
+        <h4>František Moravec</h4>
+        <p>
+            Telefon: +420000000000<br>
+            Email: moravec@admin.cz
         </p>
     </div>
 </main>

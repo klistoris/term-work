@@ -216,7 +216,7 @@ class VypisTabulek
             echo "</tr>";
             echo "<tr>";
             ?>
-            <td class="spravaUdalosti" colspan="4">
+            <td class="spravaUdalosti" colspan="5">
             <ul>
                 <li style="display: inline"><a class="tabulka_tlacitko"
                                                href="<?= BASE_URL . "?page=uprav_udalost&action=uprava&id={$row['id_udalost']}" ?>">Uprav</a></li>
@@ -233,6 +233,44 @@ class VypisTabulek
         <a class="tabulka_tlacitko" href="<?= BASE_URL . "?page=pridej_udalost" ?>">Přidat událost</a><br><br>
         <?php
         echo "Počet událostí: " . sizeof($this->dataSet);
+        echo "<br>";
+
+    }
+
+    public function render_udalost_registrovany()
+    {
+        foreach ($this->dataSet as $row) {
+            echo "<table>";
+            echo "<thead>";
+            echo "<tr>";
+            foreach ($this->columns as $key => $value) {
+                echo "<th>" . $value["table-head-title"] . "</th>";
+            }
+            echo "</tr>";
+            echo "</thead>";
+            echo "<tbody>";
+            echo "<tr  class='radek'>";
+            foreach ($this->columns as $key => $value) {
+                if (isset($row[$key])) {
+                    echo "<td>" . $row[$key] . "</td>";
+                }
+            }
+            echo "</tr>";
+            echo "<tr>";
+            ?>
+            <td class="spravaUdalosti" colspan="4">
+            <ul>
+                <li style="display: inline"><a class="tabulka_tlacitko"
+                                               href="<?= BASE_URL . "?page=uprav_udalost&action=uprava&id={$row['id_udalost']}" ?>">Zúčastnit se</a></li>
+
+            </ul></td><?php
+            echo "</tr>";
+            echo "</tbody>";
+            echo "</table>";
+            echo "<br>";
+
+        }
+
         echo "<br>";
 
     }

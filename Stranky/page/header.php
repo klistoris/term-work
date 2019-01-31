@@ -10,11 +10,11 @@
     <?php if (Autentizace::getInstance()->getIdentity()["role"]=="administrator") : ?>
         <a href="<?= BASE_URL . "?page=uzivatel&action=sprava-uzivatelu" ?>">Uživatelé</a>
         <a href="<?= BASE_URL . "?page=uzivatel&action=podle-emailu" ?>">Vyhledávání uživatelů</a>
-        <a href="<?= BASE_URL . "?page=udalost&action=udalost" ?>">Rezervace</a>
+        <a href="<?= BASE_URL . "?page=udalost&action=udalost" ?>">Události</a>
         <a href="<?= BASE_URL . "?page=auto&action=auto" ?>">Auta</a>
         <a href="<?= BASE_URL . "?page=logout" ?>">Odhlášení</a>
     <?php elseif (Autentizace::getInstance()->getIdentity()["role"]=="registrovany") :?>
-        <a href="<?= BASE_URL . "?page=udalost&action=udalost" ?>">Rezervace</a>
+        <a href="<?= BASE_URL . "?page=udalost&action=registrovany" ?>">Události</a>
         <a href="<?= BASE_URL . "?page=logout" ?>">Odhlášení</a>
     <?php else: ?>
         <a href="<?= BASE_URL . "?page=prihlaseni" ?>">Přihlášení</a>

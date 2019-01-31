@@ -7,74 +7,32 @@
     <div>
         <h1 class="nadpis">Partneři pro sezónu 2018/2019</h1>
         <p>
-            Cras elementum. Nullam faucibus mi quis velit. Nullam dapibus fermentum ipsum. Mauris tincidunt sem sed arcu.
-            Integer tempor. Aliquam erat volutpat. Mauris dictum facilisis augue. Mauris elementum mauris vitae tortor.
-            Integer lacinia. In enim a arcu imperdiet malesuada.
+            Proto tuto sezónu máme podporu hned tří sponzorů. Tímto by jsme chtěli našim sponzorům poděkovat a nezbývá, než je představit.
         </p>
         <hr>
     <div>
-        <h2>Partner 1</h2>
+        <h2>Střechy Adamec</h2>
         <p>
-            Cras elementum. Nullam faucibus mi quis velit. Nullam dapibus fermentum ipsum. Mauris tincidunt sem sed arcu.
-            Integer tempor. Aliquam erat volutpat. Mauris dictum facilisis augue. Mauris elementum mauris vitae tortor.
-            Integer lacinia. In enim a arcu imperdiet malesuada. Temporibus autem quibusdam et aut officiis debitis aut
-            rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Etiam sapien
-            elit, consequat eget, tristique non, venenatis quis, ante. Phasellus enim erat, vestibulum vel, aliquam a, posuere
-            eu, velit. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-            magni dolores eos qui ratione voluptatem sequi nesciunt.
+            Hlavním partnerem našeho klubu je firmy Střechy Adamec s. r. o.
         </p>
+        <img src="./obrazky/partner_1.jpg" width="400" height="400">
         <hr>
     </div>
     <div>
-        <h2>Partner 2</h2>
+        <h2>Švec s. r. o.</h2>
         <p>
-            Cras elementum. Nullam faucibus mi quis velit. Nullam dapibus fermentum ipsum. Mauris tincidunt sem sed arcu.
-            Integer tempor. Aliquam erat volutpat. Mauris dictum facilisis augue. Mauris elementum mauris vitae tortor.
-            Integer lacinia. In enim a arcu imperdiet malesuada. Temporibus autem quibusdam et aut officiis debitis aut
-            rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Etiam sapien
-            elit, consequat eget, tristique non, venenatis quis, ante. Phasellus enim erat, vestibulum vel, aliquam a, posuere
-            eu, velit. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-            magni dolores eos qui ratione voluptatem sequi nesciunt.
+            Druhým partnerem je firma Švec s. r. o.
         </p>
+        <img src="./obrazky/partner_2.png" width="400" height="400">
         <hr>
     </div>
     <div>
-        <h2>Partner 3</h2>
+        <h2>H3Geo s. r. o.</h2>
         <p>
-            Cras elementum. Nullam faucibus mi quis velit. Nullam dapibus fermentum ipsum. Mauris tincidunt sem sed arcu.
-            Integer tempor. Aliquam erat volutpat. Mauris dictum facilisis augue. Mauris elementum mauris vitae tortor.
-            Integer lacinia. In enim a arcu imperdiet malesuada. Temporibus autem quibusdam et aut officiis debitis aut
-            rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Etiam sapien
-            elit, consequat eget, tristique non, venenatis quis, ante. Phasellus enim erat, vestibulum vel, aliquam a, posuere
-            eu, velit. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-            magni dolores eos qui ratione voluptatem sequi nesciunt.
+            Třetím partnerem je firma h3geo s. r. o.
         </p>
-        <hr>
+        <img src="./obrazky/partner_3.png" width="400" height="400">
+        <br><br>
     </div>
-    <div>
-        <h2>Partner 4</h2>
-        <p>
-            Cras elementum. Nullam faucibus mi quis velit. Nullam dapibus fermentum ipsum. Mauris tincidunt sem sed arcu.
-            Integer tempor. Aliquam erat volutpat. Mauris dictum facilisis augue. Mauris elementum mauris vitae tortor.
-            Integer lacinia. In enim a arcu imperdiet malesuada. Temporibus autem quibusdam et aut officiis debitis aut
-            rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Etiam sapien
-            elit, consequat eget, tristique non, venenatis quis, ante. Phasellus enim erat, vestibulum vel, aliquam a, posuere
-            eu, velit. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-            magni dolores eos qui ratione voluptatem sequi nesciunt.
-        </p>
-        <hr>
-    </div>
-    <div>
-        <h2>Partner 5</h2>
-        <p>
-            Cras elementum. Nullam faucibus mi quis velit. Nullam dapibus fermentum ipsum. Mauris tincidunt sem sed arcu.
-            Integer tempor. Aliquam erat volutpat. Mauris dictum facilisis augue. Mauris elementum mauris vitae tortor.
-            Integer lacinia. In enim a arcu imperdiet malesuada. Temporibus autem quibusdam et aut officiis debitis aut
-            rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Etiam sapien
-            elit, consequat eget, tristique non, venenatis quis, ante. Phasellus enim erat, vestibulum vel, aliquam a, posuere
-            eu, velit. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-            magni dolores eos qui ratione voluptatem sequi nesciunt.
-        </p>
-        </div>
     </div>
 </main>

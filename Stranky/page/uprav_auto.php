@@ -28,11 +28,11 @@
         <h2 class="nadpis">Upravit auto</h2>
         <form method="post" >
             <label>Značka:</label>
-            <input name="znacka" type="text" value='<?=$znacka ?>' placeholder=<?php echo $znacka?>/>
+            <input name="znacka" type="text" required value='<?=$znacka ?>' placeholder=<?php echo $znacka?>/>
             <label>Počet míst:</label>
-            <input name="mist" type="text" value='<?=$mist ?>' placeholder=<?php echo $mist?>/>
+            <input name="mist" type="text" required value='<?=$mist ?>' placeholder=<?php echo $mist?>/>
             <label>Typ:</label>
-            <input name="typ" type="text" value='<?=$typ ?>' placeholder=<?php echo $typ?>/>
+            <input name="typ" type="text" required value='<?=$typ ?>' placeholder=<?php echo $typ?>/>
             <label>Majitel:</label>
             <input name="majitel" type="text" value='<?=$majitel ?>' placeholder=<?php echo $majitel?>/>
             <input type="submit" value="Upravit auto">

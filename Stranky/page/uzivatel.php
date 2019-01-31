@@ -17,7 +17,6 @@
         $datatable->addColumn("jmeno", "Jméno");
         $datatable->addColumn("prijmeni", "Příjmení");
         $datatable->addColumn("vek", "Věk");
-        $datatable->addColumn("heslo", "Heslo");
         $datatable->addColumn("vek", "Věk");
         $datatable->addColumn("telefon", "Telefon");
         $datatable->addColumn("role", "Role");

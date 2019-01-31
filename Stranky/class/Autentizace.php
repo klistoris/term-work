@@ -26,23 +26,38 @@ class Autentizace
 
     }
 
-    public function login(string $email, string $password) : bool
+    public function login() : bool
     {
-        $stmt = $this->conn->prepare("SELECT idOsoba, jmeno, email, heslo, role FROM osoba WHERE email= :email and heslo = :heslo");
+        $stmt = $this->conn->prepare("SELECT heslo FROM osoba WHERE email=:email");
         $stmt->bindParam(':email', $_POST["loginMail"]);
-        $stmt->bindParam(':heslo', $_POST["loginPassword"]);
         $stmt->execute();
-        $user = $stmt->fetch();
+        $heslo_z_databaze = $stmt->fetch();
 
-        if ($user) {
-            $userDto = array('idOsoba' => $user['idOsoba'], 'jmeno' => $user['jmeno'], 'mail' => $user['email'],
-                'heslo' => $user['heslo'], 'role' => $user['role']);
-            $_SESSION['identity'] = $userDto;
-            self::$identity = $userDto;
-            return true;
-        } else {
+
+        $stmt = $this->conn->prepare("SELECT idOsoba, jmeno, email, heslo, role FROM osoba WHERE email= :email");
+
+        $overeni = password_verify($_POST['loginPassword'], $heslo_z_databaze['heslo']);
+
+        //if($overeni){
+            $stmt->bindParam(':email', $_POST["loginMail"]);
+            $stmt->execute();
+            $user = $stmt->fetch();
+
+            if ($user) {
+                $userDto = array('idOsoba' => $user['idOsoba'], 'jmeno' => $user['jmeno'], 'mail' => $user['email'],
+                    'heslo' => $user['heslo'], 'role' => $user['role']);
+                $_SESSION['identity'] = $userDto;
+                self::$identity = $userDto;
+                return true;
+            }
+            else {
+                    return false;
+                }
+        /*}else{
+            echo "chybné přihlášení";
+            echo "<br>";
             return false;
-        }
+        }*/
     }
 
     public function hasIdentity() : bool

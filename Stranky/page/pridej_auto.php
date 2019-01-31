@@ -19,13 +19,13 @@
         <h2 class="nadpis">Přidat auto</h2>
         <form method="post" >
             <label>Značka:</label>
-            <input name="znacka" type="text" placeholder="Vložte značku"/>
+            <input name="znacka" type="text" placeholder="Vložte značku" required/>
             <label>Počet míst:</label>
-            <input name="mist" type="text" placeholder="Vložte počet míst"/>
+            <input name="mist" type="text" placeholder="Vložte počet míst" required/>
             <label>Typ:</label>
-            <input name="typ" type="text" placeholder="Vložte typ"/>
+            <input name="typ" type="text" placeholder="Vložte typ" required/>
             <label>Majitel:</label>
-            <input name="majitel" type="text" placeholder="Vložte majitele"/>
+            <input name="majitel" type="text" placeholder="Vložte majitele" required/>
             <input type="submit" value="Přidat auto">
         </form>
     </div>

@@ -19,11 +19,15 @@
     $role = $uzivatel[0]["role"];
     }
 
+
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (empty($errors)) {
+            $heslo =$_POST["heslo"];
+            $heslo_sifrovane = password_hash($heslo,PASSWORD_BCRYPT);
             $pom = new Uzivatel(Pripojeni::getPdoInstance());
             $pom->upravUzivatele($id, $_POST["jmeno"], $_POST["prijmeni"], $_POST["email"], $_POST["vek"],
-                $_POST["telefon"], $_POST["heslo"], $_POST["role"]);
+                $_POST["telefon"], $heslo_sifrovane, $_POST["role"]);
         }
     }
 
@@ -33,17 +37,17 @@
         <h2 class="nadpis">Upravit uživatele</h2>
         <form method="post" >
             <label>Jméno:</label>
-            <input name="jmeno" type="text" value='<?=$jmeno ?>' placeholder=<?php echo $jmeno?>/>
-            <label>Heslo:</label>
-            <input name="prijmeni" type="text" value='<?=$prijmeni ?>' placeholder=<?php echo $prijmeni?>/>
+            <input name="jmeno" type="text" required value='<?=$jmeno ?>' placeholder=<?php echo $jmeno?>/>
+            <label>Příjmeni:</label>
+            <input name="prijmeni" type="text" required value='<?=$prijmeni ?>' placeholder=<?php echo $prijmeni?>/>
             <label>Email:</label>
-            <input name="email" type="text" value='<?=$email ?>' placeholder=<?php echo $email?>/>
+            <input name="email" type="text" required value='<?=$email ?>' placeholder=<?php echo $email?>/>
             <label>Věk:</label>
-            <input name="vek" type="text" value='<?=$vek ?>' placeholder=<?php echo $vek?>/>
+            <input name="vek" type="text" required value='<?=$vek ?>' placeholder=<?php echo $vek?>/>
             <label>Telefon:</label>
-            <input name="telefon" type="text" value='<?=$telefon ?>' placeholder=<?php echo $telefon?>/>
+            <input name="telefon" type="text" required value='<?=$telefon ?>' placeholder=<?php echo $telefon?>/>
             <label>Heslo:</label>
-            <input name="heslo" type="text" value='<?=$heslo ?>' placeholder=<?php echo $heslo?>/>
+            <input name="heslo" type="text" required value='<?=$heslo ?>' placeholder=<?php echo $heslo?>/>
             <label>Role:</label>
             <select name="role">
                 <option value="administrator">Administrátor</option>

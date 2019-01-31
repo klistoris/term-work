@@ -16,7 +16,6 @@ header{
     top: 0;
     width: 100%;
     position: fixed;
-    float: left;
     z-index: 1;
     display: flex;
     align-items: center;
@@ -55,6 +54,7 @@ header nav a:hover{
     background: url("./obrazky/uvodni_fotka.jpeg") no-repeat center;
     background-size: cover;
     position: relative;
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -177,6 +177,21 @@ input[type=submit]:hover {
     color: white;
 }
 
+.tlacitko{
+    background-color: deepskyblue;
+    border: none;
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.tlacitko:hover{
+    background-color: white;
+    color: black;
+}
+
 ul{
     list-style-type: decimal;
 }
@@ -194,13 +209,13 @@ footer a{
     color: white;
     text-decoration: none;
 }
-
-/* Use a media query to add a break point at 800px: */
+/*
+!* Use a media query to add a break point at 800px: *!
 @media screen and (max-width:800px) {
     .left, .main, .right {
-        width:100%; /* The width is 100%, when the viewport is 800px or smaller */
+        width:100%; !* The width is 100%, when the viewport is 800px or smaller *!
     }
-}
+}*/
 
 
 

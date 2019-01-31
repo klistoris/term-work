@@ -8,9 +8,13 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (empty($errors)) {
 
+
+            $heslo =$_POST["heslo"];
+            $heslo_sifrovane = password_hash($heslo,PASSWORD_BCRYPT);
+
             $pom = new Uzivatel(Pripojeni::getPdoInstance());
             $pom->vlozUzivatele($_POST["jmeno"], $_POST["prijmeni"], $_POST["vek"], $_POST["telefon"],
-                $_POST["email"], $_POST["heslo"], $_POST["role"]);
+                $_POST["email"], $heslo_sifrovane, $_POST["role"]);
         }
     }
 
@@ -20,17 +24,17 @@
         <h2 class="nadpis">Přidat uživatele</h2>
         <form method="post" >
             <label>Jméno:</label>
-            <input name="jmeno" type="text" placeholder="Vložte jméno"/>
+            <input name="jmeno" type="text" placeholder="Vložte jméno" required/>
             <label>Přijmení:</label>
-            <input name="prijmeni" type="text" placeholder="Vložte příjmení"/>
+            <input name="prijmeni" type="text" placeholder="Vložte příjmení" required/>
             <label>Email:</label>
-            <input name="email" type="text" placeholder="Vložte email"/>
+            <input name="email" type="text" placeholder="Vložte email" required/>
             <label>Věk:</label>
-            <input name="vek" type="text" placeholder="Vložte věk"/>
+            <input name="vek" type="text" placeholder="Vložte věk" required/>
             <label>Telefon:</label>
-            <input name="telefon" type="text" placeholder="Vložte telefon"/>
+            <input name="telefon" type="text" placeholder="Vložte telefon" required/>
             <label>Heslo:</label>
-            <input name="heslo" type="text" placeholder="Vložte heslo"/>
+            <input name="heslo" type="text" placeholder="Vložte heslo" required/>
             <label>Role:</label>
             <select name="role">
                 <option name= "admin" value="administrator">Admin</option>
