@@ -8,9 +8,8 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (empty($errors)) {
 
-            $pom = new Uzivatel(Pripojeni::getPdoInstance());
-            $pom->vlozUzivatele($_POST["jmeno"], $_POST["prijmeni"], $_POST["vek"], $_POST["telefon"],
-                $_POST["email"], $_POST["heslo"], $_POST["role"]);
+            $pom = new Udalost(Pripojeni::getPdoInstance());
+            $pom->vlozUdalost($_POST["nazev"], $_POST["datum"], $_POST["misto"], $_POST["popis"]);
         }
     }
 
@@ -22,7 +21,7 @@
             <label>Název:</label>
             <input name="nazev" type="text" placeholder="Vložte název"/>
             <label>Datum:</label>
-            <input name="datum" type="text" placeholder="Vložte datum ve formátu: DD-MM-YYYY HH:MM:SS"/>
+            <input name="datum" type="text" placeholder="Vložte datum ve formátu: YYYY-MM-DD HH:MM:SS"/>
             <label>Místo konání:</label>
             <input name="misto" type="text" placeholder="Vložte místo"/>
             <label>Popis:</label>

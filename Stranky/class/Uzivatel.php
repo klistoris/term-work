@@ -38,7 +38,7 @@ class Uzivatel
         return $stmt->fetchAll();
     }
 
-    public function getOneUser($id) {
+    public function getOneUzivatel($id) {
         $stmt_znaky = $this->conn->prepare("SET NAMES 'utf8'");
         $stmt_znaky->execute();
         $stmt = $this->conn->prepare("SELECT * FROM osoba WHERE idOsoba LIKE :id");

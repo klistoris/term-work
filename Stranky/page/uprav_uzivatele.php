@@ -9,7 +9,7 @@
     if ($_GET["action"] == "uprava") {
     $id = $_GET["id"];
     $userDao = new Uzivatel(Pripojeni::getPdoInstance());
-    $uzivatel = $userDao->getOneUser($id);
+    $uzivatel = $userDao->getOneUzivatel($id);
     $jmeno = $uzivatel[0]["jmeno"];
     $prijmeni = $uzivatel[0]["prijmeni"];
     $email = $uzivatel[0]["email"];
@@ -46,7 +46,7 @@
             <input name="heslo" type="text" value='<?=$heslo ?>' placeholder=<?php echo $heslo?>/>
             <label>Role:</label>
             <select name="role">
-                <option value="admin">Admin</option>
+                <option value="administrator">Administrátor</option>
                 <option value="registrovany">Registrovaný</option>
             </select>
             <input type="submit" value="Upravit uživatele">

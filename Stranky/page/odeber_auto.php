@@ -1,6 +1,6 @@
 <section id="cover_photo">
     <div>
-        <h1>Odeber událost</h1>
+        <h1>Odeber auto</h1>
     </div>
 </section>
 <main>
@@ -12,16 +12,16 @@
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (empty($errors)) {
-            $pom = new Udalost(Pripojeni::getPdoInstance());
-            $pom->odeberUdalost($id);
+            $pom = new Auto(Pripojeni::getPdoInstance());
+            $pom->odeberAuto($id);
         }
     }
 
     ?>
     <div class="form_registrace">
-        <h2>Opravdu chcete odebrat událost ?</h2>
+        <h2>Opravdu chcete odebrat auto ?</h2>
         <form method="post">
-            <input type="submit" value="Odebrat událost">
+            <input type="submit" value="Odebrat auto">
         </form>
     </div>
 </main>

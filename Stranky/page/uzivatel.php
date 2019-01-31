@@ -27,7 +27,7 @@
         if ($_GET["action"] == "uprava") {
             $id = $_GET["id"];
             $userDao = new Uzivatel(Pripojeni::getPdoInstance());
-            $uzivatel = $userDao->getOneUser($id);
+            $uzivatel = $userDao->getOneUzivatel($id);
             $jmeno = $uzivatel[0]["jmeno"];
             $prijmeni = $uzivatel[0]["prijmeni"];
             $email = $uzivatel[0]["email"];
@@ -73,21 +73,6 @@
             $datatable->render_uzivatel_email();
 
         }
-    } else if ($_GET["action"] == "udalost") {
-        echo "<h2 class='nadpis'>Události</h2>";
-
-        $conn = Pripojeni::getPdoInstance();
-            $userDao = new Uzivatel($conn);
-            $udalost = $userDao->getByUdalost();
-            $datatable = new VypisTabulek($udalost);
-            $datatable->addColumn("id_udalost", "ID");
-            $datatable->addColumn("nazev_udalosti", "Název");
-            $datatable->addColumn("datum_konani", "Datum");
-            $datatable->addColumn("misto_konani", "Místo konání");
-            $datatable->addColumn("popis_udalosti", "Popis");
-            $datatable->render_udalost();
-
-
     }
     ?>
         </div>
