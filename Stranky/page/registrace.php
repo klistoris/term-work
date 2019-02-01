@@ -8,11 +8,11 @@
     <div class="form_registrace">
         <form>
             <label for="firstname">Jméno</label>
-            <input name="firstname" id="firstname" type="text" placeholder="Vložte jméno">
+            <input name="firstname" id="firstname" type="text" placeholder="Vložte jméno" required>
             <label >Příjmení:</label>
-            <input name="lastname" type="text" placeholder="Vložte příjmení">
+            <input name="lastname" type="text" placeholder="Vložte příjmení" required>
             <label >Email:</label>
-            <input name="mail" type="text" placeholder="Vložte email">
+            <input name="mail" type="text" placeholder="Vložte email" required>
             <label>Ročník:</label>
             <select name="rocnik">
                 <option value="1980">1980</option>

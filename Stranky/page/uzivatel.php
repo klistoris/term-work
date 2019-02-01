@@ -1,3 +1,4 @@
+<?php if (Autentizace::getInstance()->getIdentity()["role"]=="administrator") : ?>
 <section id="cover_photo">
     <div>
         <h1>Uživatelé</h1>
@@ -22,27 +23,6 @@
         $datatable->addColumn("role", "Role");
         $datatable->addColumn("editace", "Editace");
         $datatable->render_uzivatel();
-
-        if ($_GET["action"] == "uprava") {
-            $id = $_GET["id"];
-            $userDao = new Uzivatel(Pripojeni::getPdoInstance());
-            $uzivatel = $userDao->getOneUzivatel($id);
-            $jmeno = $uzivatel[0]["jmeno"];
-            $prijmeni = $uzivatel[0]["prijmeni"];
-            $email = $uzivatel[0]["email"];
-            $vek = $uzivatel[0]["vek"];
-            $telefon = $uzivatel[0]["telefon"];
-            $heslo = $uzivatel[0]["heslo"];
-            $role = $uzivatel[0]["role"];
-        }
-
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            if (empty($errors)) {
-                $pom = new Uzivatel(Pripojeni::getPdoInstance());
-                $pom->upravUzivatele($id, $_POST["jmeno"], $_POST["prijmeni"], $_POST["email"], $_POST["vek"],
-                    $_POST["telefon"], $_POST["heslo"], $_POST["role"]);
-            }
-        }
     }
 
     else if ($_GET["action"] == "podle-emailu") {
@@ -81,3 +61,6 @@
 
 </main>
 
+<?php else: include "uvod.php" ?>
+
+<?php endif; ?>

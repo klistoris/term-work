@@ -1,3 +1,4 @@
+<?php if (Autentizace::getInstance()->getIdentity()["role"]=="administrator") : ?>
 <section id="cover_photo">
     <div>
         <h1>Uprav uživatele</h1>
@@ -9,7 +10,7 @@
     if ($_GET["action"] == "uprava") {
     $id = $_GET["id"];
     $userDao = new Uzivatel(Pripojeni::getPdoInstance());
-    $uzivatel = $userDao->getOneUzivatel($id);
+    $uzivatel = $userDao->getOneUzivatelID($id);
     $jmeno = $uzivatel[0]["jmeno"];
     $prijmeni = $uzivatel[0]["prijmeni"];
     $email = $uzivatel[0]["email"];
@@ -28,6 +29,7 @@
             $pom = new Uzivatel(Pripojeni::getPdoInstance());
             $pom->upravUzivatele($id, $_POST["jmeno"], $_POST["prijmeni"], $_POST["email"], $_POST["vek"],
                 $_POST["telefon"], $heslo_sifrovane, $_POST["role"]);
+                header('Location: ?page=uzivatel&action=sprava-uzivatelu');
         }
     }
 
@@ -58,3 +60,7 @@
     </div>
     <br>
 </main>
+
+<?php else: include "uvod.php" ?>
+
+<?php endif; ?>

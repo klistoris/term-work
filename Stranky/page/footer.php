@@ -5,8 +5,8 @@
         </section>
 
         <div>
-            <a href="https://www.facebook.com/Florbal.Letohrad/" >
-                <img src="obrazky/facebook_logo.png" alt="Smiley face" class="odkazy-na-socialni-site">
+            <a href="https://www.facebook.com/Florbal.Letohrad/">
+                <img src="./obrazky/facebook_logo.png" alt="Smiley" class="odkazy-na-socialni-site">
             </a>
             <a href="https://www.instagram.com/fbcletohrad/">
                 <img src="./obrazky/instagram_logo.png" alt="Smiley face" class="odkazy-na-socialni-site">
@@ -22,7 +22,7 @@
                 <?= date("Y", strtotime("-1 year")); ?>
                 -
                 <?php echo date("Y"); ?>
-                <a href="https://github.com">
+                <a href="https://github.com/klistoris/term-work">
                     Edy
                 </a>
             </p>

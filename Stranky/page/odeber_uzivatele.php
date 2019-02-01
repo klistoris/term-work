@@ -1,3 +1,4 @@
+<?php if (Autentizace::getInstance()->getIdentity()["role"]=="administrator") : ?>
 <section id="cover_photo">
     <div>
         <h1>Odeber uživatele</h1>
@@ -14,6 +15,7 @@
         if (empty($errors)) {
             $pom = new Uzivatel(Pripojeni::getPdoInstance());
             $pom->odeberUzivatele($id);
+            header('Location: ?page=uzivatel&action=sprava-uzivatelu');
         }
     }
 
@@ -26,3 +28,6 @@
     </div>
 </main>
 
+<?php else: include "uvod.php" ?>
+
+<?php endif; ?>

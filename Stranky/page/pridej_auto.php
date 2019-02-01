@@ -1,3 +1,4 @@
+<?php if (Autentizace::getInstance()->getIdentity()["role"]=="administrator") : ?>
 <section id="cover_photo">
     <div>
         <h1>Přidej auto</h1>
@@ -31,3 +32,7 @@
     </div>
     <br>
 </main>
+
+<?php else: include "uvod.php" ?>
+
+<?php endif; ?>

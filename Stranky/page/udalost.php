@@ -1,3 +1,5 @@
+<?php if (Autentizace::getInstance()->getIdentity()["role"]=="administrator" ||
+    Autentizace::getInstance()->getIdentity()["role"]=="registrovany"): ?>
 <section id="cover_photo">
     <div>
         <h1>Událost</h1>
@@ -47,3 +49,6 @@
 
 </main>
 
+<?php else: include "uvod.php" ?>
+
+<?php endif; ?>

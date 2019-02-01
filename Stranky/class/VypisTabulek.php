@@ -258,7 +258,7 @@ class VypisTabulek
             echo "</tr>";
             echo "<tr>";
             ?>
-            <td class="spravaUdalosti" colspan="4">
+            <td class="spravaUdalosti" colspan="5">
             <ul>
                 <li style="display: inline"><a class="tabulka_tlacitko"
                                                href="<?= BASE_URL . "?page=uprav_udalost&action=uprava&id={$row['id_udalost']}" ?>">Zúčastnit se</a></li>

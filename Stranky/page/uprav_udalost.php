@@ -1,3 +1,4 @@
+<?php if (Autentizace::getInstance()->getIdentity()["role"]=="administrator") : ?>
 <section id="cover_photo">
     <div>
         <h1>Uprav událost</h1>
@@ -20,6 +21,7 @@
         if (empty($errors)) {
             $pom = new Udalost(Pripojeni::getPdoInstance());
             $pom->upravUdalost($id, $_POST["nazev"], $_POST["datum"], $_POST["cas"], $_POST["misto"], $_POST["popis"]);
+            header('Location: ?page=udalost&action=udalost');
         }
     }
 
@@ -43,3 +45,7 @@
     </div>
     <br>
 </main>
+
+<?php else: include "uvod.php" ?>
+
+<?php endif; ?>

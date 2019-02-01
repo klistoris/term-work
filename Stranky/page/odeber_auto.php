@@ -1,3 +1,4 @@
+<?php if (Autentizace::getInstance()->getIdentity()["role"]=="administrator") : ?>
 <section id="cover_photo">
     <div>
         <h1>Odeber auto</h1>
@@ -14,6 +15,7 @@
         if (empty($errors)) {
             $pom = new Auto(Pripojeni::getPdoInstance());
             $pom->odeberAuto($id);
+            header('Location: ?page=auto&action=auto');
         }
     }
 
@@ -25,3 +27,7 @@
         </form>
     </div>
 </main>
+
+<?php else: include "uvod.php" ?>
+
+<?php endif; ?>

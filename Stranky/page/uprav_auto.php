@@ -1,3 +1,4 @@
+<?php if (Autentizace::getInstance()->getIdentity()["role"]=="administrator") : ?>
 <section id="cover_photo">
     <div>
         <h1>Upravit auto</h1>
@@ -19,6 +20,7 @@
         if (empty($errors)) {
             $pom = new Auto(Pripojeni::getPdoInstance());
             $pom->upravAuto($id, $_POST["znacka"], $_POST["mist"], $_POST["typ"], $_POST["majitel"]);
+            header('Location: ?page=auto&action=auto');
         }
     }
 
@@ -40,3 +42,7 @@
     </div>
     <br>
 </main>
+
+<?php else: include "uvod.php" ?>
+
+<?php endif; ?>

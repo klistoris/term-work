@@ -38,13 +38,23 @@ class Uzivatel
         return $stmt->fetchAll();
     }
 
-    public function getOneUzivatel($id) {
+    public function getOneUzivatelID($id) {
         $stmt_znaky = $this->conn->prepare("SET NAMES 'utf8'");
         $stmt_znaky->execute();
         $stmt = $this->conn->prepare("SELECT * FROM osoba WHERE idOsoba LIKE :id");
         $stmt->bindParam(":id", $id);
         $stmt->execute();
         return $stmt->fetchAll();
+    }
+
+    public function zmenHeslo($id, $heslo)
+    {
+        $stmt2 = $this->conn->prepare("SET NAMES 'utf8'");
+        $stmt2->execute();
+        $stmt = $this->conn->prepare("UPDATE osoba SET heslo=:heslo where idOsoba=:id");
+        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':heslo', $heslo);
+        $stmt->execute();
     }
 
     public function vlozUzivatele($jmeno, $prijmeni, $telefon, $vek, $email, $heslo, $role)

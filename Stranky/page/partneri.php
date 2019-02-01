@@ -10,6 +10,15 @@
             Proto tuto sezónu máme podporu hned tří sponzorů. Tímto by jsme chtěli našim sponzorům poděkovat a nezbývá, než je představit.
         </p>
         <hr>
+        <div>
+            <h2>Orel</h2>
+            <p>
+                Náš klub patří do organizace Orel
+            </p>
+            <img src="./obrazky/partner_4.png" width="400" height="300">
+            <hr>
+        </div
+        <hr>
     <div>
         <h2>Střechy Adamec</h2>
         <p>

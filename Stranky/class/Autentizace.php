@@ -38,7 +38,7 @@ class Autentizace
 
         $overeni = password_verify($_POST['loginPassword'], $heslo_z_databaze['heslo']);
 
-        //if($overeni){
+        if($overeni){
             $stmt->bindParam(':email', $_POST["loginMail"]);
             $stmt->execute();
             $user = $stmt->fetch();
@@ -53,11 +53,11 @@ class Autentizace
             else {
                     return false;
                 }
-        /*}else{
+        }else{
             echo "chybné přihlášení";
             echo "<br>";
             return false;
-        }*/
+        }
     }
 
     public function hasIdentity() : bool
