@@ -85,18 +85,25 @@ class VypisTabulek
         echo "<tbody>";
         foreach ($this->dataSet as $row) {
             echo "<tr>";
+            $i = 0;
             foreach ($this->columns as $key => $value) {
                 if (isset($row[$key])) {
                     echo "<td>" . $row[$key] . "</td>";
                 } else {
-                    ?>
-                    <td style='width: 20em' class="spravaUdalosti">
-                    <ul>
-                        <li style="display: inline"><a class="tabulka_tlacitko"
-                                                       href="<?= BASE_URL . "?page=uprav_auto&action=uprava&id={$row['idauto']}" ?>">Uprav</a></li>
-                        <li style="display: inline"><a class="tabulka_tlacitko"
-                                                       href="<?= BASE_URL . "?page=odeber_auto&action=odebrat&id={$row['idauto']}" ?>">Odeber</a></li>
-                    </ul></td><?php
+                    if ($i == 0){
+                        ?>
+                        <td style='height: 3em' class="spravaUdalosti">
+                            <a class="tabulka_tlacitko" href="<?= BASE_URL . "?page=uprav_auto&action=uprava&id={$row['idauto']}"?>">Uprav</a>
+                        </td>
+                        <?php
+                    } else{
+                        ?>
+                        <td style='height: 3em' class="spravaUdalosti">
+                            <a class="tabulka_tlacitko" href="<?= BASE_URL . "?page=odeber_auto&action=odebrat&id={$row['idauto']}" ?>">Odeber</a>
+                        </td>
+                        <?php
+                    }
+                    $i++;
                 }
 
             }
@@ -125,18 +132,28 @@ class VypisTabulek
         echo "<tbody>";
         foreach ($this->dataSet as $row) {
             echo "<tr>";
+            $i = 0;
             foreach ($this->columns as $key => $value) {
                 if (isset($row[$key])) {
                     echo "<td>" . $row[$key] . "</td>";
                 } else {
-                    ?>
-                    <td style='width: 40em' class="spravaUdalosti">
-                    <ul>
-                        <li style="display: inline"><a class="tabulka_tlacitko"
-                                                       href="<?= BASE_URL . "?page=uprav_uzivatele&action=uprava&id={$row['idOsoba']}" ?>">Uprav</a></li>
-                        <li style="display: inline"><a class="tabulka_tlacitko"
-                                                       href="<?= BASE_URL . "?page=odeber_uzivatele&action=odebrat&id={$row['idOsoba']}" ?>">Odeber</a></li>
-                    </ul></td><?php
+                    if ($i == 0){
+                        ?>
+                        <td style='height: 3em' class="spravaUdalosti">
+                            <a class="tabulka_tlacitko"
+                               href="<?= BASE_URL . "?page=uprav_uzivatele&action=uprava&id={$row['idOsoba']}" ?>">Uprav</a>
+                        </td>
+
+                        <?php
+                    } else{
+                        ?>
+                        <td style='height: 3em' class="spravaUdalosti">
+                            <a class="tabulka_tlacitko"
+                           href="<?= BASE_URL . "?page=odeber_uzivatele&action=odebrat&id={$row['idOsoba']}" ?>">Odeber</a>
+                        </td>
+                        <?php
+                    }
+                    $i++;
                 }
 
             }
@@ -216,7 +233,8 @@ class VypisTabulek
             echo "</tr>";
             echo "<tr>";
             ?>
-            <td class="spravaUdalosti" colspan="5">
+
+            <td class="spravaUdalosti" colspan="5" style='height: 3em'>
             <ul>
                 <li style="display: inline"><a class="tabulka_tlacitko"
                                                href="<?= BASE_URL . "?page=uprav_udalost&action=uprava&id={$row['id_udalost']}" ?>">Uprav</a></li>
@@ -239,36 +257,95 @@ class VypisTabulek
 
     public function render_udalost_registrovany()
     {
+        $uzivatel = new Uzivatel(Pripojeni::getPdoInstance());
+        $i = 0;
         foreach ($this->dataSet as $row) {
-            echo "<table>";
-            echo "<thead>";
-            echo "<tr>";
-            foreach ($this->columns as $key => $value) {
-                echo "<th>" . $value["table-head-title"] . "</th>";
-            }
-            echo "</tr>";
-            echo "</thead>";
-            echo "<tbody>";
-            echo "<tr  class='radek'>";
-            foreach ($this->columns as $key => $value) {
-                if (isset($row[$key])) {
-                    echo "<td>" . $row[$key] . "</td>";
+            if ($uzivatel->ucastnimSeUdalosti($row['id_udalost'])) {
+
+            }else{
+                echo "<table>";
+                echo "<thead>";
+                echo "<tr>";
+                foreach ($this->columns as $key => $value) {
+                    echo "<th>" . $value["table-head-title"] . "</th>";
                 }
+                echo "</tr>";
+                echo "</thead>";
+                echo "<tbody>";
+                echo "<tr  class='radek'>";
+                foreach ($this->columns as $key => $value) {
+                    if (isset($row[$key])) {
+                        echo "<td>" . $row[$key] . "</td>";
+                    }
+                }
+                echo "</tr>";
+                echo "<tr>";
+                ?>
+                <td class="spravaUdalosti" colspan="5" style='height: 3em'>
+                <ul>
+                    <li style="display: inline"><a class="tabulka_tlacitko"
+                                                   href="<?= BASE_URL . "?page=udalost_zucastnit_se&action=mam_auto&id={$row['id_udalost']}" ?>">Zúčastnit se</a></li>
+
+                </ul></td><?php
+                echo "</tr>";
+                echo "</tbody>";
+                echo "</table>";
+                echo "<br>";
+                $i++;
             }
-            echo "</tr>";
-            echo "<tr>";
-            ?>
-            <td class="spravaUdalosti" colspan="5">
-            <ul>
-                <li style="display: inline"><a class="tabulka_tlacitko"
-                                               href="<?= BASE_URL . "?page=uprav_udalost&action=uprava&id={$row['id_udalost']}" ?>">Zúčastnit se</a></li>
-
-            </ul></td><?php
-            echo "</tr>";
-            echo "</tbody>";
-            echo "</table>";
+        }
+        if ($i==0){
             echo "<br>";
+            echo "<h3>Nejsou žádné události k registraci</h3>";
+            echo "<br>";
+        }
+        echo "<br>";
 
+    }
+
+    public function render_udalost_registrovany_ucast()
+    {
+        $uzivatel = new Uzivatel(Pripojeni::getPdoInstance());
+        $i = 0;
+        foreach ($this->dataSet as $row) {
+            if($uzivatel->ucastnimSeUdalosti($row['id_udalost'])) {
+                echo "<table>";
+                echo "<thead>";
+                echo "<tr>";
+                foreach ($this->columns as $key => $value) {
+                    echo "<th>" . $value["table-head-title"] . "</th>";
+                }
+                echo "</tr>";
+                echo "</thead>";
+                echo "<tbody>";
+                echo "<tr  class='radek'>";
+                foreach ($this->columns as $key => $value) {
+                    if (isset($row[$key])) {
+                        echo "<td>" . $row[$key] . "</td>";
+                    }
+                }
+                echo "</tr>";
+                echo "<tr>";
+                ?>
+                <td class="spravaUdalosti" colspan="5" style='height: 3em'>
+                <ul>
+                    <li style="display: inline"><a class="tabulka_tlacitko"
+                                                   href="<?= BASE_URL . "?page=uprav_udalost&action=uprava&id={$row['id_udalost']}" ?>">Odhlásit
+                            se z události</a></li>
+
+                </ul></td><?php
+                echo "</tr>";
+                echo "</tbody>";
+                echo "</table>";
+                echo "<br>";
+                $i++;
+            }
+
+        }
+        if ($i==0){
+            echo "<br>";
+            echo "<h3>Nejste přihlášen k žádné události</h3>";
+            echo "<br>";
         }
 
         echo "<br>";

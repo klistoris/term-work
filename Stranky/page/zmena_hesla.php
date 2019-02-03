@@ -25,7 +25,6 @@
             }
         }
         ?>
-
         <div class="form_registrace">
             <h2 class="nadpis">Změna hesla</h2>
             <form method="post" >

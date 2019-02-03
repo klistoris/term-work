@@ -6,6 +6,10 @@
 </section>
 <main>
     <?php
+    $conn = Pripojeni::getPdoInstance();
+    $userDao = new Auto($conn);
+    $udalost = $userDao->getEmailUzivatelu();
+
     if ($_GET["action"] == "uprava") {
         $id = $_GET["id"];
         $userDao = new Auto(Pripojeni::getPdoInstance());
@@ -36,7 +40,13 @@
             <label>Typ:</label>
             <input name="typ" type="text" required value='<?=$typ ?>' placeholder=<?php echo $typ?>/>
             <label>Majitel:</label>
-            <input name="majitel" type="text" value='<?=$majitel ?>' placeholder=<?php echo $majitel?>/>
+            <select>
+            <?php
+            foreach ($udalost as $pom) {
+                echo '<option value="' . $pom['majitel'] . '">' . $pom['email'] . '</option>';
+            }
+            ?>
+            </select>
             <input type="submit" value="Upravit auto">
         </form>
     </div>

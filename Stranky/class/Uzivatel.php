@@ -21,7 +21,7 @@ class Uzivatel
         return $stmt->fetchAll();
     }
 
-    public function getByEmail(string $mail) {
+    public function getByEmail($mail) {
         $stmt_znaky = $this->conn->prepare("SET NAMES 'utf8'");
         $stmt_znaky->execute();
         $stmt = $this->conn->prepare("SELECT * FROM osoba WHERE email LIKE concat('%', :email, '%') ");
@@ -36,6 +36,24 @@ class Uzivatel
         $stmt = $this->conn->prepare("SELECT * FROM udalost");
         $stmt->execute();
         return $stmt->fetchAll();
+    }
+
+    public function ucastnimSeUdalosti($id_udalost) : bool{
+        $stmt_znaky = $this->conn->prepare("SET NAMES 'utf8'");
+        $stmt_znaky->execute();
+        $id_osoba = $_SESSION['identity']['idOsoba'];
+        $stmt = $this->conn->prepare("SELECT COUNT(*) FROM osoba_jede_poskytnutym_vozem 
+                            WHERE vuz_na_udalost_id = (SELECT id FROM auto_jede_na_udalost WHERE udalost_id = :id_udalost) AND 
+                            osoba_id = :id_osoba");
+        $stmt->bindParam(":id_udalost", $id_udalost);
+        $stmt->bindParam(":id_osoba", $id_osoba);
+        $stmt->execute();
+        $pocet = $stmt->fetch();
+        if($pocet[0] > 0){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public function getOneUzivatelID($id) {

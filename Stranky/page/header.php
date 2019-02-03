@@ -15,6 +15,7 @@
         <a href="<?= BASE_URL . "?page=logout" ?>">Odhlášení</a>
     <?php elseif (Autentizace::getInstance()->getIdentity()["role"]=="registrovany") :?>
         <a href="<?= BASE_URL . "?page=udalost&action=registrovany" ?>">Události</a>
+        <a href="<?= BASE_URL . "?page=udalost_moje_udalosti&action=zucastnim_se" ?>">Moje události</a>
         <a href="<?= BASE_URL . "?page=zmena_hesla&action=zmena_hesla" ?>">Změna hesla</a>
         <a href="<?= BASE_URL . "?page=logout" ?>">Odhlášení</a>
     <?php else: ?>

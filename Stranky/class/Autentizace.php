@@ -34,7 +34,7 @@ class Autentizace
         $heslo_z_databaze = $stmt->fetch();
 
 
-        $stmt = $this->conn->prepare("SELECT idOsoba, jmeno, email, heslo, role FROM osoba WHERE email= :email");
+        $stmt = $this->conn->prepare("SELECT idOsoba, jmeno, email, heslo, role, vek FROM osoba WHERE email= :email");
 
         $overeni = password_verify($_POST['loginPassword'], $heslo_z_databaze['heslo']);
 
@@ -45,7 +45,7 @@ class Autentizace
 
             if ($user) {
                 $userDto = array('idOsoba' => $user['idOsoba'], 'jmeno' => $user['jmeno'], 'mail' => $user['email'],
-                    'heslo' => $user['heslo'], 'role' => $user['role']);
+                    'heslo' => $user['heslo'], 'role' => $user['role'], 'vek' => $user['vek']);
                 $_SESSION['identity'] = $userDto;
                 self::$identity = $userDto;
                 return true;
@@ -54,7 +54,6 @@ class Autentizace
                     return false;
                 }
         }else{
-            echo "chybné přihlášení";
             echo "<br>";
             return false;
         }

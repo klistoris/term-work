@@ -21,7 +21,8 @@
         $datatable->addColumn("vek", "Věk");
         $datatable->addColumn("telefon", "Telefon");
         $datatable->addColumn("role", "Role");
-        $datatable->addColumn("editace", "Editace");
+        $datatable->addColumn("uprav", "Uprav");
+        $datatable->addColumn("odeber", "Odeber");
         $datatable->render_uzivatel();
     }
 

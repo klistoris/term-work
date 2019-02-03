@@ -16,7 +16,7 @@ class Udalost
     public function getByUdalost() {
         $stmt_znaky = $this->conn->prepare("SET NAMES 'utf8'");
         $stmt_znaky->execute();
-        $stmt = $this->conn->prepare("SELECT * FROM udalost");
+        $stmt = $this->conn->prepare("SELECT * FROM udalost ORDER BY datum_konani");
         $stmt->execute();
         return $stmt->fetchAll();
     }
@@ -26,6 +26,14 @@ class Udalost
         $stmt_znaky->execute();
         $stmt = $this->conn->prepare("SELECT * FROM udalost WHERE id_udalost LIKE :id");
         $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
+    public function getByUcast() {
+        $stmt_znaky = $this->conn->prepare("SET NAMES 'utf8'");
+        $stmt_znaky->execute();
+        $stmt = $this->conn->prepare("SELECT * FROM udalost WHERE ");
         $stmt->execute();
         return $stmt->fetchAll();
     }
