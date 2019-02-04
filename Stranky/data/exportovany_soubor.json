@@ -1,0 +1,72 @@
+[
+    {
+        "id_udalost": "5",
+        "0": "5",
+        "nazev_udalosti": "Turnaj",
+        "1": "Turnaj",
+        "datum_konani": "2019-03-02",
+        "2": "2019-03-02",
+        "misto_konani": "Hradec Kr\u00e1lov\u00e9",
+        "3": "Hradec Kr\u00e1lov\u00e9",
+        "popis_udalosti": "Ud\u00e1lost pro dorostence",
+        "4": "Ud\u00e1lost pro dorostence",
+        "cas_konani": "11:00:00",
+        "5": "11:00:00"
+    },
+    {
+        "id_udalost": "2",
+        "0": "2",
+        "nazev_udalosti": "Turnaj",
+        "1": "Turnaj",
+        "datum_konani": "2019-04-12",
+        "2": "2019-04-12",
+        "misto_konani": "Hradec Kr\u00e1lov\u00e9",
+        "3": "Hradec Kr\u00e1lov\u00e9",
+        "popis_udalosti": "Ud\u00e1lost pro mu\u017ee A",
+        "4": "Ud\u00e1lost pro mu\u017ee A",
+        "cas_konani": "10:10:00",
+        "5": "10:10:00"
+    },
+    {
+        "id_udalost": "3",
+        "0": "3",
+        "nazev_udalosti": "Turnaj",
+        "1": "Turnaj",
+        "datum_konani": "2019-05-14",
+        "2": "2019-05-14",
+        "misto_konani": "Vysok\u00e9 M\u00fdto",
+        "3": "Vysok\u00e9 M\u00fdto",
+        "popis_udalosti": "Ud\u00e1lost pro dorostence",
+        "4": "Ud\u00e1lost pro dorostence",
+        "cas_konani": "09:30:00",
+        "5": "09:30:00"
+    },
+    {
+        "id_udalost": "6",
+        "0": "6",
+        "nazev_udalosti": "Turnaj",
+        "1": "Turnaj",
+        "datum_konani": "2019-05-25",
+        "2": "2019-05-25",
+        "misto_konani": "Doln\u00ed Dobrou\u010d",
+        "3": "Doln\u00ed Dobrou\u010d",
+        "popis_udalosti": "Ud\u00e1lost pro mu\u017ee A",
+        "4": "Ud\u00e1lost pro mu\u017ee A",
+        "cas_konani": "09:00:00",
+        "5": "09:00:00"
+    },
+    {
+        "id_udalost": "1",
+        "0": "1",
+        "nazev_udalosti": "Turnaj",
+        "1": "Turnaj",
+        "datum_konani": "2019-06-09",
+        "2": "2019-06-09",
+        "misto_konani": "Pardubice",
+        "3": "Pardubice",
+        "popis_udalosti": "Ud\u00e1lost pro mu\u017ee B",
+        "4": "Ud\u00e1lost pro mu\u017ee B",
+        "cas_konani": "10:00:00",
+        "5": "10:00:00"
+    }
+]
